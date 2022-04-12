@@ -46,7 +46,9 @@ router.post("/", async function (req, res, next) {
   }
 });
 
-/** PUT /[isbn]   bookData => {book: updatedBook}  */
+/** PUT /[isbn]   bookData => {book: updatedBook}  
+ * Add conditional logic that creates a new book if isbn is not in db
+*/
 
 router.put("/:isbn", async function (req, res, next) {
   try {
@@ -62,6 +64,10 @@ router.put("/:isbn", async function (req, res, next) {
     return next(err);
   }
 });
+
+router.patch("/:isbn", async function (req, res, next) {
+  
+})
 
 /** DELETE /[isbn]   => {message: "Book deleted"} */
 
